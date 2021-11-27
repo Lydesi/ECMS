@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1k3dlqi" targetNamespace="http://bpmn.io/schema/bpmn">
+  <bpmn:process id="Process_1" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_1v24xll</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_1v34txd" name="1. Регистрация">
+      <bpmn:incoming>Flow_1v24xll</bpmn:incoming>
+      <bpmn:outgoing>Flow_00gsfsl</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1v24xll" sourceRef="StartEvent_1" targetRef="Activity_1v34txd" />
+    <bpmn:task id="Activity_06fzu69" name="Ввод ФИО" />
+    <bpmn:task id="Activity_1njfgew" name="Ввод должности" />
+    <bpmn:task id="Activity_1gmcckn" name="Ввод Email" />
+    <bpmn:task id="Activity_0cfqi13" name="Подтверждение регистрации" />
+    <bpmn:task id="Activity_0dpo38g" name="2. Вход">
+      <bpmn:incoming>Flow_00gsfsl</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ohqom7</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_00gsfsl" sourceRef="Activity_1v34txd" targetRef="Activity_0dpo38g" />
+    <bpmn:task id="Activity_1ttx28z" name="Ввод логина и пароля" />
+    <bpmn:task id="Activity_13kskdx" name="Валидация данных" />
+    <bpmn:task id="Activity_1cqaxfm" name="3. Переход в систему подготовки отчетов">
+      <bpmn:incoming>Flow_1ohqom7</bpmn:incoming>
+      <bpmn:outgoing>Flow_0b2s0j1</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_1ohqom7" sourceRef="Activity_0dpo38g" targetRef="Activity_1cqaxfm" />
+    <bpmn:task id="Activity_09m3doz" name="Выбор группы учащихся" />
+    <bpmn:task id="Activity_0dtoh2y" name="Создание отчета по тесту" />
+    <bpmn:task id="Activity_0p6d6z7" name="4. Отчет сформирован">
+      <bpmn:incoming>Flow_0b2s0j1</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_0b2s0j1" sourceRef="Activity_1cqaxfm" targetRef="Activity_0p6d6z7" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+      <bpmndi:BPMNEdge id="Flow_1v24xll_di" bpmnElement="Flow_1v24xll">
+        <di:waypoint x="274" y="208" />
+        <di:waypoint x="274" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_00gsfsl_di" bpmnElement="Flow_00gsfsl">
+        <di:waypoint x="274" y="330" />
+        <di:waypoint x="274" y="770" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ohqom7_di" bpmnElement="Flow_1ohqom7">
+        <di:waypoint x="274" y="850" />
+        <di:waypoint x="274" y="1090" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0b2s0j1_di" bpmnElement="Flow_0b2s0j1">
+        <di:waypoint x="274" y="1170" />
+        <di:waypoint x="274" y="1420" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_1v34txd_di" bpmnElement="Activity_1v34txd">
+        <dc:Bounds x="148" y="250" width="252" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="256" y="172" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_06fzu69_di" bpmnElement="Activity_06fzu69">
+        <dc:Bounds x="300" y="360" width="340" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1njfgew_di" bpmnElement="Activity_1njfgew">
+        <dc:Bounds x="300" y="460" width="340" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1gmcckn_di" bpmnElement="Activity_1gmcckn">
+        <dc:Bounds x="300" y="560" width="340" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0cfqi13_di" bpmnElement="Activity_0cfqi13">
+        <dc:Bounds x="300" y="660" width="340" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0dpo38g_di" bpmnElement="Activity_0dpo38g">
+        <dc:Bounds x="148" y="770" width="252" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ttx28z_di" bpmnElement="Activity_1ttx28z">
+        <dc:Bounds x="300" y="870" width="340" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_13kskdx_di" bpmnElement="Activity_13kskdx">
+        <dc:Bounds x="300" y="980" width="340" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1cqaxfm_di" bpmnElement="Activity_1cqaxfm">
+        <dc:Bounds x="144" y="1090" width="260" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_09m3doz_di" bpmnElement="Activity_09m3doz">
+        <dc:Bounds x="300" y="1200" width="340" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0dtoh2y_di" bpmnElement="Activity_0dtoh2y">
+        <dc:Bounds x="300" y="1310" width="340" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0p6d6z7_di" bpmnElement="Activity_0p6d6z7">
+        <dc:Bounds x="149" y="1420" width="250" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
