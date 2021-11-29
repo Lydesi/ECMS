@@ -1,0 +1,34 @@
+
+entity User {
+	firstName String required,
+    lastName String required,
+    status UserStatus,
+    post String,
+    email String required
+}
+
+entity Subject {
+	name String,
+    description String,
+    logo String
+}
+
+entity Post {
+	title String,
+    description String,
+    body String
+}
+
+enum UserStatus {
+	TEACHER, STUDENT
+}
+
+relationship ManyToOne {    
+    Post{subject} to Subject
+}
+
+relationship OneToOne {
+	Post{creator} to User
+}
+
+paginate Post with pagination
